@@ -34,7 +34,7 @@ body {
     background-color: var(--color-background);
 }
 
-/* NAVBAR */
+/* navbar */
 
 .navbar {
     background-color: var(--color-background-lighter);
@@ -46,6 +46,14 @@ body {
 
 .navbar > * {
     flex: 1;
+}
+
+.navbar > .hamburguer-menu {
+    display: none;
+}
+
+.navbar > .menu-list {
+    display: none;
 }
 
 .navbar > .logo-container {
@@ -78,44 +86,6 @@ body {
     justify-content: center;
     list-style-type: none;
     gap: 1.5em;
-}
-
-.navbar > ul > li {
-    display: flex;
-    align-items: center;
-    gap: 0.25em;
-    transition: all 200ms ease-in-out;
-    cursor: pointer;
-    border: var(--1px-border);
-    border-radius: 0.25em;
-}
-
-.navbar > ul > li:hover {
-    transform: scale(1.1);
-    border: var(--1px-border);
-}
-
-.navbar > ul > li:active {
-    transform: scale(0.9);
-}
-
-.navbar > ul > li > a {
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
-    padding: 0.5em 1em;
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-}
-
-.navbar > ul > li > a > span.icon {
-    font-size: 2.5rem;
-}
-
-.navbar > ul > li > a > span.link-direction {
-    font-weight: 600;
-    white-space: nowrap;
 }
 
 .navbar > .messages-info {
@@ -309,6 +279,32 @@ body {
 
 /*ANIMATIONS AND DECORATIVE CLASSES*/
 
+.link-style {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    padding: 0.5em 1em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    border-radius: var(--border-radius);
+    border: var(--1px-border);
+    transition: all 150ms ease-in-out;
+}
+
+.link-style:hover {
+    transform: scale(1.02);
+}
+
+.link-style > span:first-of-type {
+    font-size: 2.5rem;
+}
+
+.link-style > span:last-of-type {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
 .input-deco {
     padding: 1em;
     font-size: 1.15rem;
@@ -344,6 +340,77 @@ body {
 .background-transition:hover,
 .background-transition:focus-visible {
     background-position: right center;
+}
+
+/* SCREEN BREAKPOINTS */
+
+@media screen and (max-width: 1350px) {
+    .navbar > .messages-info {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .navbar > .hamburguer-menu {
+        display: flex;
+        justify-content: flex-end;
+        flex: initial;
+    }
+
+    .navbar > .menu-list {
+        background-color: var(--color-background-lighter);
+        width: 75%;
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        gap: 1em;
+        padding: 1em;
+        border: var(--1px-border);
+        border-radius: var(--border-radius);
+        flex-direction: column;
+    }
+
+    .navbar > .menu-list > ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .navbar > .links {
+        display: none;
+    }
+
+    .main {
+        width: 100%;
+    }
+
+    /*Class with only styles*/
+
+    .hamburguer-button {
+        background-color: transparent;
+        padding: 0.5em 1em;
+        border: var(--1px-border);
+        border-radius: var(--border-radius);
+        transition: all 300ms ease-in-out;
+        cursor: pointer;
+    }
+
+    .hamburguer-button > span {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .navbar > .menu-list {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
 }
 
 @keyframes beating {

@@ -7,10 +7,38 @@
             </a>
         </h1>
     </div>
+    <div class='menu-list' id='menu-list'>
+        <button class='hamburguer-button' id='hide-hamburguer-menu'>
+            <span class='material-symbols-outlined'>
+                menu
+            </span>
+        </button>
+        <ul>
+            <% links.forEach((link) => { %>
+                <li>
+                    <a class='background-transition link-style' href='<%= link.href %>' >
+                        <span class='material-symbols-outlined icon'>
+                            <%= link.icon %>
+                        </span>
+                        <span class='link-direction'>
+                            <%= link.text %>
+                        </span>
+                    </a>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+    <div class='hamburguer-menu' id='hamburguer-menu'>
+        <button class='hamburguer-button' id='show-hamburguer-menu'>
+            <span class='material-symbols-outlined'>
+                menu
+            </span>
+        </button>
+    </div>
     <ul class='links'>
         <% links.forEach((link) => { %>
             <li>
-                <a class='background-transition' href='<%= link.href %>'>
+                <a class='background-transition link-style' href='<%= link.href %>'>
                     <span class='material-symbols-outlined icon'>
                         <%= link.icon %>
                     </span>
