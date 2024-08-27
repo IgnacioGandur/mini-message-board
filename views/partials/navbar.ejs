@@ -1,0 +1,27 @@
+<nav class='navbar'>
+    <div class='logo-container'>
+        <img class='beating-animation' src='/public/icon.png' alt='Website icon'/>
+        <h1 class='text-decoration'>
+            <a href='/'>
+                Mini Message Board!
+            </a>
+        </h1>
+    </div>
+    <ul class='links'>
+        <% links.forEach((link) => { %>
+            <li>
+                <a class='background-transition' href='<%= link.href %>'>
+                    <span class='material-symbols-outlined icon'>
+                        <%= link.icon %>
+                    </span>
+                    <span class='link-direction'>
+                        <%= link.text %>
+                    </span>
+                </a>
+            </li>
+        <% }) %>
+    </ul>
+    <div class='messages-info'>
+        <i>The newest messages appear at the top!</i>
+    </div>
+</nav>

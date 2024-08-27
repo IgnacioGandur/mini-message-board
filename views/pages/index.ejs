@@ -1,20 +1,34 @@
-<%- include('./../partials/head.ejs') %>
-<body>
-    <main class='main'>
-        <ul class='messages-container'>
-            <% messages.forEach((message) => { %>
-                <li class='message'>
-                    <h2>
-                        <%= message.user %>
-                    </h2>
-                   <p>
-                        <%= message.text %>
-                   </p>
-                   <span>
-                        <%= message.added %>
-                   </span>
-                </li>
-            <% }) %>
-        </ul>
-    </main>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./../partials/head.ejs') %>
+    <body>
+        <%- include('./../partials/navbar.ejs') %>
+        <main class='main'>
+            <ul class='messages-container'>
+                <% messages.forEach((message) => { %>
+                    <li class='message'>
+                        <div class='profile-picture'>
+                            <span class='material-symbols-outlined'>
+                                face
+                            </span>
+                        </div>
+                        <div class="message-and-user">
+                            <div class="name-date">
+                                <h2>
+                                    <%= message.user %>
+                                </h2>
+                                <span class='date'>
+                                    <%= message.added %>
+                                </span>
+                            </div>
+                            <p>
+                                <%= message.text %>
+                            </p>
+                        </div>
+                    </li>
+                <% }) %>
+            </ul>
+        </main>
+        <%- include('./../partials/footer.ejs') %>
+    </body>
+</html>

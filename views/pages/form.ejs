@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./../partials/head.ejs') %>
+<body>
+    <%- include('./../partials/navbar.ejs') %>
+    <main class='main'>
+        <form method="POST" action="/new" class='message-form'>
+            <h2 class='text-decoration'>
+                Post a message into the mini board!
+            </h2>
+            <label for="userName">
+                <input class='input-deco' type="text" id="userName" name="userName" placeholder="Your user name here..." maxlength="25" required/>
+            </label>
+            <label for="userMessage">
+                <textarea class='input-deco' id="userMessage" name="userMessage" maxlength="125" rows='10' placeholder='Write your message here...'  required/></textarea>
+            </label>
+            <button class='input-deco background-transition' type="submit">
+                Post your message!
+            </button>
+        </form>
+    </main>
+    <%- include('./../partials/footer.ejs') %>
+</body>
+</html>
