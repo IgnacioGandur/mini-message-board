@@ -352,6 +352,7 @@ body {
         var(--color-purple),
         var(--color-blue)
     );
+    background-repeat: no-repeat;
     background-size: 350%;
     background-position: left center;
     transition: all 300ms ease-in-out;
