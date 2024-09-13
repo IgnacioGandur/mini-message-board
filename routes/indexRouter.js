@@ -1,20 +1,6 @@
 const { Router } = require("express");
-const moment = require("moment");
-
+const { indexGet } = require("../controller/indexController");
 const indexRouter = Router();
-
-const messages = [
-    {
-        text: "Hi there!",
-        user: "Amando",
-        added: moment(new Date()).format("dddd, Do MMMM YYYY [at] h:mm:ss a"),
-    },
-    {
-        text: "Hello World!",
-        user: "Charles",
-        added: moment(new Date()).format("dddd, Do MMMM YYYY [at] h:mm:ss a"),
-    },
-];
 
 const links = [
     {
@@ -41,16 +27,11 @@ const links = [
 
 indexRouter.use((req, res, next) => {
     res.locals = {
-        messages,
         links,
     };
     next();
 });
 
-indexRouter.get("/", (req, res) => {
-    res.render("pages/index", {
-        title: "Mini Message Board | Homepage",
-    });
-});
+indexRouter.get("/", indexGet);
 
 module.exports = indexRouter;

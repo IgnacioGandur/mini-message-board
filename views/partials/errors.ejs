@@ -1,0 +1,12 @@
+<% if (locals.errors) { %>
+    <div class='errors'>
+        <h3>Please check if your inputs meet the below requirements...</h3>
+        <ul>
+        <% errors.forEach((error) => { %>
+            <li>
+                <%= error.msg %>
+            </li>
+        <% })  %>
+        </ul>
+    </div>
+<% } %>

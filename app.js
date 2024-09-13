@@ -1,3 +1,4 @@
+require("dotenv").config();
 // Packages
 const express = require("express");
 const path = require("node:path");

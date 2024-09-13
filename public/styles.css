@@ -98,6 +98,23 @@ body {
     color: #fafafa66;
 }
 
+/* ERRORS */
+
+.errors {
+    padding: 1em;
+    border: 1px solid red;
+    border-radius: var(--border-radius);
+    background-color: #78000055;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.errors * {
+    font-weight: 400;
+}
+
 /* MAIN */
 
 .main {
@@ -218,11 +235,11 @@ body {
     background-image: linear-gradient(45deg, #3c096c66, #023e8a66);
 }
 
-.main > .message-form > label > *:user-valid {
+.main > .message-form > label > *:valid {
     border: 1px solid #00ff0044;
 }
 
-.main > .message-form > label > *:user-invalid {
+.main > .message-form > label > *:invalid {
     border: 1px solid #ff000044;
 }
 
